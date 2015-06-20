@@ -5,7 +5,6 @@ import (
 	"os"
 	"os/exec"
 	"sort"
-	"strconv"
 	"strings"
 
 	"github.com/codegangsta/cli"
@@ -19,6 +18,12 @@ func main() {
 	app.Version = "0.1.0"
 	app.Usage = "List files in order of the commited count"
 	app.Action = hot
+	app.Flags = []cli.Flag{
+		cli.IntFlag{
+			Name:  "number, n",
+			Usage: "the number of listed files",
+		},
+	}
 	app.Run(os.Args)
 }
 
@@ -31,14 +36,8 @@ func hot(context *cli.Context) {
 		files = append(files, File{Name: filename, CommitCount: commitCount})
 	}
 
-	var limit int
-	var err error
-	if len(context.Args()) > 0 {
-		limit, err = strconv.Atoi(context.Args()[0])
-		if err != nil {
-			limit = len(files)
-		}
-	} else {
+	limit := context.Int("number")
+	if limit == 0 {
 		limit = len(files)
 	}
 

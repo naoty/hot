@@ -11,39 +11,49 @@ $ go get github.com/naoty/hot
 `hot` command lists files in order of the commited count.
 
 ```
+$ cd src/github.com/naoty/Timepiece
 $ hot
-15: todo.go
-15: README.md
-10: main.go
-5: undone.go
-5: done.go
-5: list.go
-4: delete.go
-3: add.go
-2: Makefile
-2: rename.go
-2: add_test.go
-2: clear.go
-2: delete_test.go
-2: formatter.go
-2: move.go
-1: .travis.yml
+24: README.md
+17: Sources/NSDate+Timepiece.swift
+15: Tests/NSDate+TimepieceTests.swift
+10: Timepiece.xcodeproj/project.pbxproj
+9: Timepiece.podspec
+7: Sources/Duration.swift
+7: Tests/DurationTests.swift
+7: Tests/Int+TimepieceTests.swift
+6: Sources/Int+Timepiece.swift
+4: Sources/NSDateComponents+Timepiece.swift
+2: .travis.yml
+2: Tests/NSTimeInterval+TimepieceTests.swift
+2: Timepiece.xcodeproj/xcshareddata/xcschemes/Timepiece OSX.xcscheme
+2: Sources/NSTimeInterval+Timepiece.swift
+1: Timepiece.xcodeproj/xcshareddata/xcschemes/Timepiece iOS.xcscheme
+1: Timepiece.xcworkspace/contents.xcworkspacedata
+1: .gitignore
 1: LICENSE
-1: clear_test.go
-1: done_test.go
-1: move_test.go
-1: rename_test.go
-1: todo_file.go
-1: undone_test.go
+1: Sources/NSCalendar+Timepiece.swift
+1: Sources/NSCalendarUnit+Timepiece.swift
+1: Sources/String+Timepiece.swift
+1: Tests/NSCalendarUnit+TimepieceTests.swift
+1: Tests/String+TimepieceTests.swift
+1: Timepiece.playground/Contents.swift
+1: Timepiece.playground/Sources/SupportCode.swift
+1: Timepiece.playground/contents.xcplayground
+1: Timepiece.playground/playground.xcworkspace/contents.xcworkspacedata
+1: Timepiece.xcodeproj/Timepiece-Info.plist
+1: Timepiece.xcodeproj/TimepieceTests-Info.plist
+1: Timepiece.xcodeproj/project.xcworkspace/contents.xcworkspacedata
 ```
 
+`--number` or `-n` flag enables to limit the number of files.
+
 ```
-$ hot 5
-15: todo.go
-15: README.md
-10: main.go
-5: undone.go
-5: done.go
+$ hot -n 5
+24: README.md
+17: Sources/NSDate+Timepiece.swift
+15: Tests/NSDate+TimepieceTests.swift
+10: Timepiece.xcodeproj/project.pbxproj
+9: Timepiece.podspec
 ```
 
 ## Author
