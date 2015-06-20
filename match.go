@@ -1,19 +1,17 @@
 package main
 
 import (
-	"path/filepath"
 	"strings"
+
+	"github.com/bmatcuk/doublestar"
 )
 
 func Match(pattern string, filenames []string) []string {
 	var matched []string
 
-	pattern, _ = filepath.Abs(pattern)
-	globbed, _ := filepath.Glob(pattern)
-
+	globbed, _ := doublestar.Glob(pattern)
 	for _, filename := range filenames {
-		abs, _ := filepath.Abs(filename)
-		if contains(abs, globbed) {
+		if contains(filename, globbed) {
 			matched = append(matched, filename)
 		}
 	}
