@@ -56,6 +56,17 @@ $ hot -n 5
 9: Timepiece.podspec
 ```
 
+Given a pattern, only matched files are listed.
+
+```
+$ hot -n 5 '**/*.swift'
+17: Sources/NSDate+Timepiece.swift
+15: Tests/NSDate+TimepieceTests.swift
+7: Tests/Int+TimepieceTests.swift
+7: Sources/Duration.swift
+7: Tests/DurationTests.swift
+```
+
 ## Author
 
 [naoty](https://github.com/naoty)

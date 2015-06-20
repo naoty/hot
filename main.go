@@ -31,6 +31,12 @@ func hot(context *cli.Context) {
 	var files Files
 
 	filenames, _ := gitLsFiles()
+
+	if len(context.Args()) > 0 {
+		pattern := context.Args()[0]
+		filenames = Match(pattern, filenames)
+	}
+
 	for _, filename := range filenames {
 		commitCount := getCommitTimes(filename)
 		files = append(files, File{Name: filename, CommitCount: commitCount})
